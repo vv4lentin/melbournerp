@@ -4,6 +4,7 @@ from discord import app_commands
 from discord.ui import Button, View, Select
 import asyncio
 import io
+import re
 import json
 from keep_alive import keep_alive
 
@@ -13,30 +14,33 @@ intents.members = True
 intents.message_content = True
 bot = commands.Bot(command_prefix='.', intents=intents)
 bot.sleep_mode = True
-ALLOWED_ROLE_ID = 1410228518066978877
-SAY_ROLE_ID = 1409641647859568660
-HELP_REQUEST_ROLE_ID = 1409647524607955149
-IA_ROLE = 1409648827270431032  # New role ID for Internal Affairs commands
+ALLOWED_ROLE_ID = 1385160436046893168
+SAY_ROLE_ID = 1385160436046893168
+HELP_REQUEST_ROLE_ID = 1384466481831608381
+IA_ROLE = 1420636084110495846  # New role ID for Internal Affairs commands
 loaded_cogs = []
 
 # Ticket system configuration
-TICKET_PANEL_CHANNEL = 1409990426106134598
-TRANSCRIPT_CHANNEL = 1409988017870999663
+TICKET_PANEL_CHANNEL = 1402948558197362758
+TRANSCRIPT_CHANNEL = 1403262039597776926
 SUPPORT_ROLES = {
-    'general': 1409644061463281714,
-    'internals': 1409644980200407100,
-    'management': 1409644061463281714,
-    'senior': 1410822274109542440
+    'general': 1420671099242549318,
+    'internals': 1420636084110495846,
+    'management': 1383402156111167598,
+    'senior': 1385160436046893168
 }
 TICKET_DATA = {}
 
 # Role hierarchy
 ROLE_HIERARCHY = [
-    1409647282168660038, 1409646969646874757, 1409646965637251192, 1409646961551740939,
-    1409646958351487029, 1409646950155944058, 1409646326152429568, 1409646322742595625,
-    1409646319232090223, 1409646316044156958, 1409646285442646056, 1409644038784811090,
-    1409643902734041211, 1409643792176517221, 1409641396964556862, 1409641367721742416,
-    1409641315993649342, 1409639458684538978, 1409639307068837978
+    1383401122063978496, 1383386801682649088, 1383401266998153216, 1383401586285346938,
+    1383401686827143201, 1383401856620957696, 1383401961621159957, 1385160436046893168,
+    1383402460777021500, 1383402634462892032, 1383402737340776468, 1383402824783626281,
+    1420415728137277440, 1383402914340671558, 1384437286841876530, 1420635304607485972,
+    1384437426503684127, 1384437559068987505, 1384437544825131171, 1420729110031765618,
+    1384438224021094482, 1384438407421497548, 1384437924652781690, 1384438610303914015,
+    1420729658114052177, 1384459413401899028, 1384459510571335681, 1384459593366769776,
+    1384460078928625755, 1402933851436879932
 ]
 
 # Warning and strike roles
@@ -49,23 +53,23 @@ STRIKE_ROLES = {
     'Strike 2': 1409648126226206730
 }
 BLACKLIST_ROLE = 1409648100632559717
-AT_ROLE = 1409647282168660038
+AT_ROLE = 1402933851436879932
 
 # Application system configuration
 ROLE_IDS = {
-    'erlc_moderator': 1409648827270431032,
-    'discord_moderator': 1409647524607955149,
-    'internal_affairs': 1409648827270431032,
+    'erlc_moderator': 1384461995587276880,
+    'discord_moderator': 1384461995587276880,
+    'internal_affairs': 1384461995587276880,
     'directorship': 1409644061463281714
 }
 REVIEW_CHANNEL_IDS = {
-    'erlc_moderator': 1411013413269798973,
-    'discord_moderator': 1411013443191967755,
-    'internal_affairs': 1411013370509000725,
-    'directorship': 1411013330369384538
+    'erlc_moderator': 1421437062963527690,
+    'discord_moderator': 1421437062963527690,
+    'internal_affairs': 1421437062963527690,
+    'directorship': 1421437062963527690
 }
-APPLICATION_PANEL_CHANNEL_ID = 1409994382160953494
-REVIEWER_ROLE_ID = 1410822274109542440
+APPLICATION_PANEL_CHANNEL_ID = 1421136732912353463
+REVIEWER_ROLE_ID = 1385160436046893168
 
 APPLICATION_QUESTIONS = {
     'erlc_moderator': [
@@ -101,6 +105,7 @@ APPLICATION_QUESTIONS = {
     ],
     'directorship': ["[APPLICATION UNAVAILIBLE]"]
 }
+# DONE HERE
 
 # Example button view for embeds.json
 class ExampleButtonView(View):
@@ -133,7 +138,7 @@ class TicketView(View):
     )
     async def select_callback(self, interaction: discord.Interaction, select):
         if bot.sleep_mode:
-            await interaction.response.send_message("The bot is in sleep mode. Ticket creation is disabled.", ephemeral=True)
+            await interaction.response.send_message("The bot is in sleep mode. Ticket system is disabled.", ephemeral=True)
             return
             
         ticket_type = select.values[0]
@@ -161,18 +166,18 @@ class TicketView(View):
         }
         
         embed = discord.Embed(
-            color=11020918,
+            color=12134451,
             title=f"{ticket_type.capitalize()} Support",
-            description="**Hello! Thank you for contacting MB:RP Support Team**\n**Please describe your issue.**\n**If you chose the wrong type of ticket, please close this ticket with the 'close' button** \n\nOpening a ticket to troll the support team will result in a week timeout."
+            description="**Hello! Thank you for contacting Melbourne RP Support Team**\n**Please describe your issue.**\n**If you chose the wrong type of ticket, please close this ticket with the 'close' button** \n\nOpening a ticket to troll the support team will result in a week timeout."
         )
         embed.set_author(
-            name="Miami Beach Roleplay",
-            icon_url="https://images-ext-1.discordapp.net/external/bPAr_kO_c0XfJqdCgNapZQl0fYzK14INrdeCtBPHwBI/%3Fsize%3D512/https/cdn.discordapp.com/icons/1409637452125175850/778a19b6966c1a9ae0d1cef3655b7c97.png"
+            name="Melbourne Roleplay",
+            icon_url="https://cdn.discordapp.com/icons/1383386513533964349/202921f0cb5e1382522e41b5948f19c5.png?size=512"
         )
-        embed.set_image(url="https://cdn.discordapp.com/attachments/1409991757025771681/1410924642343976980/NEW_YORK_2.png")
+        embed.set_image(url="https://cdn.discordapp.com/attachments/1383386514385272864/1421439122316464219/NEW_YORK.png?ex=68d909d7&is=68d7b857&hm=223898c799d7739c9400543b11f5b28e267cab5a14564150ca12056350c0429c&")
         embed.set_footer(
-            text="Miami Beach Roleplay | Ticket System",
-            icon_url="https://images-ext-1.discordapp.net/external/bPAr_kO_c0XfJqdCgNapZQl0fYzK14INrdeCtBPHwBI/%3Fsize%3D512/https/cdn.discordapp.com/icons/1409637452125175850/778a19b6966c1a9ae0d1cef3655b7c97.png"
+            text="Melbourne Roleplay | Ticket System",
+            icon_url="https://cdn.discordapp.com/icons/1383386513533964349/202921f0cb5e1382522e41b5948f19c5.png?size=512"
         )
         
         ticket_view = TicketControlView()
@@ -229,18 +234,18 @@ class CloseReasonModal(discord.ui.Modal, title="Close Ticket"):
             return
             
         embed = discord.Embed(
-            color=11020918,
+            color=12134451,
             title="Ticket | Close Request",
             description=f"{interaction.user.mention} requested to close this ticket.\n\n**Reason**: {self.reason.value}"
         )
         embed.set_author(
-            name="Miami Beach Roleplay",
-            icon_url="https://images-ext-1.discordapp.net/external/bPAr_kO_c0XfJqdCgNapZQl0fYzK14INrdeCtBPHwBI/%3Fsize%3D512/https/cdn.discordapp.com/icons/1409637452125175850/778a19b6966c1a9ae0d1cef3655b7c97.png"
+            name="Melbourne Roleplay",
+            icon_url="https://cdn.discordapp.com/icons/1383386513533964349/202921f0cb5e1382522e41b5948f19c5.png?size=512"
         )
-        embed.set_image(url="https://cdn.discordapp.com/attachments/1409991757025771681/1410924642343976980/NEW_YORK_2.png")
+        embed.set_image(url="https://cdn.discordapp.com/attachments/1383386514385272864/1421439122316464219/NEW_YORK.png?ex=68d909d7&is=68d7b857&hm=223898c799d7739c9400543b11f5b28e267cab5a14564150ca12056350c0429c&")
         embed.set_footer(
-            text="Miami Beach Roleplay | Ticket System",
-            icon_url="https://images-ext-1.discordapp.net/external/bPAr_kO_c0XfJqdCgNapZQl0fYzK14INrdeCtBPHwBI/%3Fsize%3D512/https/cdn.discordapp.com/icons/1409637452125175850/778a19b6966c1a9ae0d1cef3655b7c97.png"
+            text="Melbourne Roleplay | Ticket System",
+            icon_url="https://cdn.discordapp.com/icons/1383386513533964349/202921f0cb5e1382522e41b5948f19c5.png?size=512"
         )
         
         await interaction.response.send_message(
@@ -308,7 +313,7 @@ class ApplicationReviewView(View):
                     title=f"{self.application_type.replace('_', ' ').title()} Application Accepted",
                     description="Congratulations! Your application has been accepted. Please open a ticket if you did not get roled.",
                     color=discord.Color.green()
-                ).set_footer(text="Miami Beach Roleplay")
+                ).set_footer(text="Melbourne Roleplay")
             )
         except discord.Forbidden:
             await interaction.followup.send(f"Could not DM {self.applicant.mention}. Please notify them manually.", ephemeral=True)
@@ -350,7 +355,7 @@ class DenyReasonModal(discord.ui.Modal, title="Deny Application Reason"):
                     title=f"{self.application_type.replace('_', ' ').title()} Application Denied",
                     description=f"Your application has been denied.\n**Reason**: {self.reason.value}",
                     color=discord.Color.red()
-                ).set_footer(text="Miami Beach Roleplay")
+                ).set_footer(text="Melbourne Roleplay")
             )
         except discord.Forbidden:
             await interaction.followup.send(f"Could not DM {self.applicant.mention}. Please notify them manually.", ephemeral=True)
@@ -424,10 +429,10 @@ class ApplicationSelect(Select):
             for i, (question, answer) in enumerate(answers, 1):
                 embed.add_field(name=f"Question {i}: {question}", value=answer, inline=False)
             embed.set_author(
-                name="Miami Beach Roleplay",
-                icon_url="https://images-ext-1.discordapp.net/external/bPAr_kO_c0XfJqdCgNapZQl0fYzK14INrdeCtBPHwBI/%3Fsize%3D512/https/cdn.discordapp.com/icons/1409637452125175850/778a19b6966c1a9ae0d1cef3655b7c97.png"
+                name="Melbourne Roleplay",
+                icon_url="https://cdn.discordapp.com/icons/1383386513533964349/202921f0cb5e1382522e41b5948f19c5.png?size=512"
             )
-            embed.set_footer(text="Miami Beach Roleplay | Application Submission")
+            embed.set_footer(text="Melbourne Roleplay | Application Submission")
 
             review_channel = bot.get_channel(REVIEW_CHANNEL_IDS[selected_app])
             if review_channel:
@@ -475,11 +480,11 @@ class PromoteModal(discord.ui.Modal, title="Promotion Reason"):
             await self.member.remove_roles(current_rank)
             await self.member.add_roles(self.next_rank)
             
-            promotion_channel = self.bot.get_channel(1410606425645781053)
+            promotion_channel = self.bot.get_channel(1421440876089053194)
             embed = discord.Embed(
                 title="Staff | Promotion",
                 description=(
-                    f"Congratulations! The senior high ranking team of **Miami Beach Roleplay** "
+                    f"Congratulations! The senior high ranking team of **Melbourne Roleplay** "
                     f"has decided to promote you!\n\n"
                     f"**New Rank**: {self.next_rank.mention}\n"
                     f"**Reason**: {self.reason.value}"
@@ -520,7 +525,7 @@ class WarningModal(discord.ui.Modal, title="Warning Reason"):
         
         await self.member.add_roles(warn_role)
         
-        warning_channel = self.bot.get_channel(1410606498559557682)
+        warning_channel = self.bot.get_channel(1421441062907412480)
         embed = discord.Embed(
             title=f"Staff Infraction • Warning ({warn_level})",
             description=f"{self.member.mention} has been warned.\n\n**Reason**: {self.reason.value}",
@@ -558,7 +563,7 @@ class StrikeModal(discord.ui.Modal, title="Strike Reason"):
         
         await self.member.add_roles(strike_role)
         
-        strike_channel = self.bot.get_channel(1410606498559557682)
+        strike_channel = self.bot.get_channel(1421441062907412480)
         embed = discord.Embed(
             title=f"Staff Infraction • Strike ({strike_level})",
             description=f"{self.member.mention} has been striked.\n\n**Reason**: {self.reason.value}",
@@ -590,7 +595,7 @@ class TerminationModal(discord.ui.Modal, title="Termination Reason"):
         if roles_to_remove:
             await self.member.remove_roles(*roles_to_remove)
         
-        termination_channel = self.bot.get_channel(1410606498559557682)
+        termination_channel = self.bot.get_channel(1421441062907412480)
         embed = discord.Embed(
             title="Staff Termination",
             description=f"{self.member.mention} has been terminated!\n\n**Reason**: {self.reason.value}",
@@ -625,7 +630,7 @@ class BlacklistModal(discord.ui.Modal, title="Blacklist Reason"):
         blacklist_role = interaction.guild.get_role(BLACKLIST_ROLE)
         await self.member.add_roles(blacklist_role)
         
-        blacklist_channel = self.bot.get_channel(1410606908691451986)
+        blacklist_channel = self.bot.get_channel(1421441062907412480)
         embed = discord.Embed(
             title="Staff Blacklist",
             description=f"{self.member.mention} has been blacklisted from staff!\n\n**Reason**: {self.reason.value}",
@@ -824,11 +829,11 @@ class RoleRequestView(View):
                     description=f"Your request for the role '{self.role}' ({self.action}) has been accepted.",
                     color=discord.Color.green()
                 ).set_author(
-                    name="Miami Beach Roleplay",
-                    icon_url="https://images-ext-1.discordapp.net/external/bPAr_kO_c0XfJqdCgNapZQl0fYzK14INrdeCtBPHwBI/%3Fsize%3D512/https/cdn.discordapp.com/icons/1409637452125175850/778a19b6966c1a9ae0d1cef3655b7c97.png"
+                    name="Melbourne Roleplay",
+                    icon_url="https://cdn.discordapp.com/icons/1383386513533964349/202921f0cb5e1382522e41b5948f19c5.png?size=512"
                 ).set_footer(
-                    text="Miami Beach Roleplay",
-                    icon_url="https://images-ext-1.discordapp.net/external/bPAr_kO_c0XfJqdCgNapZQl0fYzK14INrdeCtBPHwBI/%3Fsize%3D512/https/cdn.discordapp.com/icons/1409637452125175850/778a19b6966c1a9ae0d1cef3655b7c97.png"
+                    text="Melbourne Roleplay",
+                    icon_url="https://cdn.discordapp.com/icons/1383386513533964349/202921f0cb5e1382522e41b5948f19c5.png?size=512"
                 )
             )
         except discord.Forbidden:
@@ -851,11 +856,11 @@ class RoleRequestView(View):
                     description=f"Your request for the role '{self.role}' ({self.action}) has been denied.",
                     color=discord.Color.red()
                 ).set_author(
-                    name="Miami Beach Roleplay",
-                    icon_url="https://images-ext-1.discordapp.net/external/bPAr_kO_c0XfJqdCgNapZQl0fYzK14INrdeCtBPHwBI/%3Fsize%3D512/https/cdn.discordapp.com/icons/1409637452125175850/778a19b6966c1a9ae0d1cef3655b7c97.png"
+                    name="Melbourne Roleplay",
+                    icon_url="https://cdn.discordapp.com/icons/1383386513533964349/202921f0cb5e1382522e41b5948f19c5.png?size=512"
                 ).set_footer(
-                    text="Miami Beach Roleplay",
-                    icon_url="https://images-ext-1.discordapp.net/external/bPAr_kO_c0XfJqdCgNapZQl0fYzK14INrdeCtBPHwBI/%3Fsize%3D512/https/cdn.discordapp.com/icons/1409637452125175850/778a19b6966c1a9ae0d1cef3655b7c97.png"
+                    text="Melbourne Roleplay",
+                    icon_url="https://cdn.discordapp.com/icons/1383386513533964349/202921f0cb5e1382522e41b5948f19c5.png?size=512"
                 )
             )
         except discord.Forbidden:
@@ -1071,7 +1076,7 @@ async def training(ctx: commands.Context, co_host: discord.Member = None):
         return
     
     # Role ID to ping
-    role_id = 1409647282168660038
+    role_id = 1402933851436879932
     
     # Create announcement embed
     embed = discord.Embed(
@@ -1083,14 +1088,14 @@ async def training(ctx: commands.Context, co_host: discord.Member = None):
     embed.add_field(name="Join Code", value="SFRole", inline=True)
     embed.add_field(name="Location", value="Sheriff • Briefing Room", inline=True)
     embed.set_footer(
-        text="Miami Beach Roleplay",
-        icon_url="https://images-ext-1.discordapp.net/external/bPAr_kO_c0XfJqdCgNapZQl0fYzK14INrdeCtBPHwBI/%3Fsize%3D512/https/cdn.discordapp.com/icons/1409637452125175850/778a19b6966c1a9ae0d1cef3655b7c97.png"
+        text="Melbourne Roleplay",
+        icon_url="https://cdn.discordapp.com/icons/1383386513533964349/202921f0cb5e1382522e41b5948f19c5.png?size=512"
     )
     embed.set_author(
-        name="Miami Beach Roleplay",
-        icon_url="https://images-ext-1.discordapp.net/external/bPAr_kO_c0XfJqdCgNapZQl0fYzK14INrdeCtBPHwBI/%3Fsize%3D512/https/cdn.discordapp.com/icons/1409637452125175850/778a19b6966c1a9ae0d1cef3655b7c97.png"
+        text="Melbourne Roleplay",
+        icon_url="https://cdn.discordapp.com/icons/1383386513533964349/202921f0cb5e1382522e41b5948f19c5.png?size=512"
     )
-    embed.set_image(url="https://cdn.discordapp.com/attachments/1409991757025771681/1410924642343976980/NEW_YORK_2.png")
+    embed.set_image(url="https://cdn.discordapp.com/attachments/1383386514385272864/1421439122316464219/NEW_YORK.png?ex=68d909d7&is=68d7b857&hm=223898c799d7739c9400543b11f5b28e267cab5a14564150ca12056350c0429c&")
     
     # Send embed to the command's channel and ping role
     try:
@@ -1139,7 +1144,7 @@ async def role_request(interaction: discord.Interaction, role: str, action: str,
 
     # IDs
     vavax_id = 1038522974988411000  # vavax989 user ID
-    channel_id = 1409991912814805064  # Role request channel ID
+    channel_id = 1421443061845852220  # Role request channel ID
 
     # Get the vavax989 user and the channel
     try:
@@ -1156,12 +1161,12 @@ async def role_request(interaction: discord.Interaction, role: str, action: str,
         color=11020918
     )
     dm_embed.set_author(
-        name="Miami Beach Roleplay",
-        icon_url="https://images-ext-1.discordapp.net/external/bPAr_kO_c0XfJqdCgNapZQl0fYzK14INrdeCtBPHwBI/%3Fsize%3D512/https/cdn.discordapp.com/icons/1409637452125175850/778a19b6966c1a9ae0d1cef3655b7c97.png"
+        name="Melbourne Roleplay",
+        icon_url="https://cdn.discordapp.com/icons/1383386513533964349/202921f0cb5e1382522e41b5948f19c5.png?size=51"
     )
     dm_embed.set_footer(
-        text="Miami Beach Roleplay",
-        icon_url="https://images-ext-1.discordapp.net/external/bPAr_kO_c0XfJqdCgNapZQl0fYzK14INrdeCtBPHwBI/%3Fsize%3D512/https/cdn.discordapp.com/icons/1409637452125175850/778a19b6966c1a9ae0d1cef3655b7c97.png"
+        name="Melbourne Roleplay",
+        icon_url="https://cdn.discordapp.com/icons/1383386513533964349/202921f0cb5e1382522e41b5948f19c5.png?size=51"
     )
 
     # Send DM to vavax989
@@ -1185,8 +1190,8 @@ async def role_request(interaction: discord.Interaction, role: str, action: str,
         icon_url="https://images-ext-1.discordapp.net/external/bPAr_kO_c0XfJqdCgNapZQl0fYzK14INrdeCtBPHwBI/%3Fsize%3D512/https/cdn.discordapp.com/icons/1409637452125175850/778a19b6966c1a9ae0d1cef3655b7c97.png"
     )
     channel_embed.set_footer(
-        text="Miami Beach Roleplay",
-        icon_url="https://images-ext-1.discordapp.net/external/bPAr_kO_c0XfJqdCgNapZQl0fYzK14INrdeCtBPHwBI/%3Fsize%3D512/https/cdn.discordapp.com/icons/1409637452125175850/778a19b6966c1a9ae0d1cef3655b7c97.png"
+        name="Melbourne Roleplay",
+        icon_url="https://cdn.discordapp.com/icons/1383386513533964349/202921f0cb5e1382522e41b5948f19c5.png?size=51"
     )
 
     # Send the embed with buttons to the channel
@@ -1226,13 +1231,13 @@ async def on_ready():
             )
         )
         embed.set_author(
-            name="Miami Beach Roleplay",
-            icon_url="https://images-ext-1.discordapp.net/external/bPAr_kO_c0XfJqdCgNapZQl0fYzK14INrdeCtBPHwBI/%3Fsize%3D512/https/cdn.discordapp.com/icons/1409637452125175850/778a19b6966c1a9ae0d1cef3655b7c97.png"
+            name="Melbourne Roleplay",
+            icon_url="https://cdn.discordapp.com/icons/1383386513533964349/202921f0cb5e1382522e41b5948f19c5.png?size=512"
         )
-        embed.set_image(url="https://cdn.discordapp.com/attachments/1409991757025771681/1410924642343976980/NEW_YORK_2.png")
+        embed.set_image(url="https://cdn.discordapp.com/attachments/1383386514385272864/1421439122316464219/NEW_YORK.png?ex=68d909d7&is=68d7b857&hm=223898c799d7739c9400543b11f5b28e267cab5a14564150ca12056350c0429c&")
         embed.set_footer(
-            text="Miami Beach Roleplay | Applications System",
-            icon_url="https://images-ext-1.discordapp.net/external/bPAr_kO_c0XfJqdCgNapZQl0fYzK14INrdeCtBPHwBI/%3Fsize%3D512/https/cdn.discordapp.com/icons/1409637452125175850/778a19b6966c1a9ae0d1cef3655b7c97.png"
+            text="Melbourne Roleplay | Application System",
+            icon_url="https://cdn.discordapp.com/icons/1383386513533964349/202921f0cb5e1382522e41b5948f19c5.png?size=512"
         )
         
         view = ApplicationView()
@@ -1256,13 +1261,13 @@ async def on_ready():
             )
         )
         embed.set_author(
-            name="Miami Beach Roleplay",
-            icon_url="https://images-ext-1.discordapp.net/external/bPAr_kO_c0XfJqdCgNapZQl0fYzK14INrdeCtBPHwBI/%3Fsize%3D512/https/cdn.discordapp.com/icons/1409637452125175850/778a19b6966c1a9ae0d1cef3655b7c97.png"
+            name="Melbourne Roleplay",
+            icon_url="https://cdn.discordapp.com/icons/1383386513533964349/202921f0cb5e1382522e41b5948f19c5.png?size=512"
         )
-        embed.set_image(url="https://cdn.discordapp.com/attachments/1409991757025771681/1410924642343976980/NEW_YORK_2.png")
+        embed.set_image(url="https://cdn.discordapp.com/attachments/1383386514385272864/1421439122316464219/NEW_YORK.png?ex=68d909d7&is=68d7b857&hm=223898c799d7739c9400543b11f5b28e267cab5a14564150ca12056350c0429c&")
         embed.set_footer(
-            text="Miami Beach Roleplay | Ticket System",
-            icon_url="https://images-ext-1.discordapp.net/external/bPAr_kO_c0XfJqdCgNapZQl0fYzK14INrdeCtBPHwBI/%3Fsize%3D512/https/cdn.discordapp.com/icons/1409637452125175850/778a19b6966c1a9ae0d1cef3655b7c97.png"
+            text="Melbourne Roleplay | Ticket System",
+            icon_url="https://cdn.discordapp.com/icons/1383386513533964349/202921f0cb5e1382522e41b5948f19c5.png?size=512"
         )
         
         await ticket_channel.send(embed=embed, view=TicketView())
@@ -1281,7 +1286,7 @@ async def stop(ctx):
         description=f"The bot has been put in sleep mode by {ctx.author.mention}\n\n**Disabled cogs:**\n" + "\n".join(loaded_cogs),
         color=discord.Color.blue()
     )
-    embed.set_footer(text="Miami Beach Roleplay")
+    embed.set_footer(text="Melbourne Roleplay")
     await bot.change_presence(
         status=discord.Status.idle,
         activity=discord.Activity(type=discord.ActivityType.watching, name="Waiting for SHR to initialize..")
@@ -1303,10 +1308,10 @@ async def start(ctx):
         description=f"The bot has been started by {ctx.author.mention}\n\n**Enabled cogs:**\n" + "\n".join(loaded_cogs),
         color=discord.Color.green()
     )
-    embed.set_footer(text="Miami Beach Roleplay")
+    embed.set_footer(text="Melbourne Roleplay")
     await bot.change_presence(
         status=discord.Status.dnd,
-        activity=discord.Activity(type=discord.ActivityType.watching, name="Miami Beach Roleplay")
+        activity=discord.Activity(type=discord.ActivityType.watching, name="Melbourne Roleplay")
     )
     await load_extensions()
     await ctx.send(embed=embed)
@@ -1333,7 +1338,7 @@ async def servers(ctx):
         description="\n".join([f"{guild.name} - {guild.id}" for guild in bot.guilds]),
         color=discord.Color.blue()
     )
-    embed.set_footer(text="Miami Beach Roleplay")
+    embed.set_footer(text="Melbourne Roleplay")
     await ctx.send(embed=embed)
 
 # Nick command
@@ -1365,7 +1370,7 @@ async def requesthelp(ctx, *, reason: str):
         ))
         return
     
-    help_channel = bot.get_channel(1410230678355709984)
+    help_channel = bot.get_channel(1421443989139361802)
     role = discord.utils.get(ctx.guild.roles, id=HELP_REQUEST_ROLE_ID)
     
     embed = discord.Embed(
@@ -1374,7 +1379,7 @@ async def requesthelp(ctx, *, reason: str):
         color=discord.Color.blue()
     )
     embed.add_field(name="Reason", value=reason, inline=False)
-    embed.set_footer(text="Miami Beach Roleplay")
+    embed.set_footer(text="Melbourne Roleplay")
     
     await help_channel.send(content=f"{role.mention}", embed=embed)
     await ctx.send(embed=discord.Embed(
@@ -1402,13 +1407,13 @@ async def closerequest(ctx, *, reason="No reason provided"):
         description=f"{ctx.author.mention} requested to close this ticket.\n\n**Reason**: {reason}"
     )
     embed.set_author(
-        name="Miami Beach Roleplay",
-        icon_url="https://images-ext-1.discordapp.net/external/bPAr_kO_c0XfJqdCgNapZQl0fYzK14INrdeCtBPHwBI/%3Fsize%3D512/https/cdn.discordapp.com/icons/1409637452125175850/778a19b6966c1a9ae0d1cef3655b7c97.png"
+        name="Melbourne Roleplay",
+        icon_url="https://cdn.discordapp.com/icons/1383386513533964349/202921f0cb5e1382522e41b5948f19c5.png?size=512"
     )
-    embed.set_image(url="https://cdn.discordapp.com/attachments/1409991757025771681/1410924642343976980/NEW_YORK_2.png")
+    embed.set_image(url="https://cdn.discordapp.com/attachments/1383386514385272864/1421439122316464219/NEW_YORK.png?ex=68d909d7&is=68d7b857&hm=223898c799d7739c9400543b11f5b28e267cab5a14564150ca12056350c0429c&")
     embed.set_footer(
-        text="Miami Beach Roleplay | Ticket System",
-        icon_url="https://images-ext-1.discordapp.net/external/bPAr_kO_c0XfJqdCgNapZQl0fYzK14INrdeCtBPHwBI/%3Fsize%3D512/https/cdn.discordapp.com/icons/1409637452125175850/778a19b6966c1a9ae0d1cef3655b7c97.png"
+        text="Melbourne Roleplay | Ticket System",
+        icon_url="https://cdn.discordapp.com/icons/1383386513533964349/202921f0cb5e1382522e41b5948f19c5.png?size=512"
     )
     
     await ctx.send(
@@ -1513,7 +1518,7 @@ async def ia_case(interaction: discord.Interaction, number: int, reporter: disco
         return
 
     # Define the target channel
-    channel = bot.get_channel(1411385584785690654)
+    channel = bot.get_channel(1421444258380124160)
     if not channel:
         await interaction.response.send_message("Channel not found!", ephemeral=True)
         return
@@ -1526,7 +1531,7 @@ async def ia_case(interaction: discord.Interaction, number: int, reporter: disco
     case_embed.add_field(name="Reporter", value=reporter.mention, inline=False)
     case_embed.add_field(name="Reported", value=reported.mention, inline=False)
     case_embed.add_field(name="Reason", value=reason, inline=False)
-    case_embed.set_footer(text="Miami Beach Roleplay")
+    case_embed.set_footer(text="Melbourne Roleplay")
 
     # Send the case embed and create a thread
     case_message = await channel.send(embed=case_embed)
@@ -1549,7 +1554,7 @@ async def ia_case(interaction: discord.Interaction, number: int, reporter: disco
         ),
         color=discord.Color.blue()
     )
-    poll_embed.set_footer(text="Miami Beach Roleplay")
+    poll_embed.set_footer(text="Melbourne Roleplay")
 
     # Send the poll embed in the thread and add reactions
     poll_message = await thread.send(embed=poll_embed)
@@ -1710,4 +1715,4 @@ async def on_command_error(ctx, error):
             ))
 
 keep_alive()
-bot.run("MTQxMDIyNjUwMDA3NDA4MjM3NA.GP-ViX.I7qf32lLdzoMKJoLBpAEsy3ZbWP0TY7Bk6HjF8")
+bot.run("MTQyMTQzNzIxNjg2MDgwMzIxNQ.Ge3UX6.1VP-U6-q8ntS5SN0BPW81xx2ttBNkbgP1amQgI")
