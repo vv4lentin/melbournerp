@@ -9,8 +9,8 @@ logging.basicConfig(filename='globalban.log', level=logging.INFO,
 class GlobalBan(commands.Cog):
     def __init__(self, bot):
         self.bot = bot
-        self.allowed_role_ids = [1409641647859568660, 1409641654473850950]
-        self.log_channel_id = 1409988017870999663
+        self.allowed_role_ids = [1383401188447490099, 1421447689542832158]
+        self.log_channel_id = 1421431875553067039
 
     async def get_user(self, ctx, user_input):
         try:
@@ -69,7 +69,7 @@ class GlobalBan(commands.Cog):
         embed.add_field(name="User", value=user.name, inline=False)
         embed.add_field(name="Reason", value=reason, inline=False)
         embed.add_field(name="Servers Banned", value="\n".join(banned_servers), inline=False)
-        embed.set_footer(text="Miami Beach Roleplay")
+        embed.set_footer(text="Melbourne Roleplay")
         
         await ctx.send(embed=embed)
         
@@ -116,7 +116,7 @@ class GlobalBan(commands.Cog):
         embed.add_field(name="User", value=user.name, inline=False)
         embed.add_field(name="Reason", value="Unbanned", inline=False)
         embed.add_field(name="Servers Unbanned", value="\n".join(unbanned_servers), inline=False)
-        embed.set_footer(text="Miami Beach Roleplay")
+        embed.set_footer(text="Melbourne Roleplay")
         
         await ctx.send(embed=embed)
         
