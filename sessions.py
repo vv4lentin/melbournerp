@@ -18,7 +18,7 @@ class VoteView(View):
         await interaction.response.send_message("Your vote has been recorded!", ephemeral=True)
         # Update the embed with the current vote count
         embed = interaction.message.embeds[0]
-        embed.set_field_at(0, name="Join Code", value=f"SFRole\n**Votes: {len(self.cog.voters)}/10**", inline=False)
+        embed.set_field_at(0, name="Join Code", value=f"MeL\n**Votes: {len(self.cog.voters)}/5**", inline=False)
         await interaction.message.edit(embed=embed)
 
     @discord.ui.button(label="Voters", style=ButtonStyle.grey)
@@ -40,14 +40,14 @@ class VoteView(View):
         await interaction.response.send_message("Your vote has been canceled!", ephemeral=True)
         # Update the embed with the current vote count
         embed = interaction.message.embeds[0]
-        embed.set_field_at(0, name="Join Code", value=f"SFRole\n**Votes: {len(self.cog.voters)}/10**", inline=False)
+        embed.set_field_at(0, name="Join Code", value=f"MeL\n**Votes: {len(self.cog.voters)}/5**", inline=False)
         await interaction.message.edit(embed=embed)
 
 class Sessions(commands.Cog):
     def __init__(self, bot):
         self.bot = bot
-        self.required_role_id = 1410607327630852096
-        self.target_channel_id = 1409990592603357224
+        self.required_role_id = 1420730840929009714
+        self.target_channel_id = 1421088776993767456
         self.voters = set()  # Store voter IDs
 
     # Unauthorized embed
@@ -76,7 +76,7 @@ class Sessions(commands.Cog):
         embed = discord.Embed(
             color=14384577,
             title="Server Start Up (SSU) | Community Vote",
-            description="Vote for SSU with the button below, 10 votes are required to SSU."
+            description="Vote for SSU with the button below, 5 votes are required to SSU."
         )
         embed.set_author(
             name="Miami Beach Roleplay",
