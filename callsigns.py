@@ -55,7 +55,7 @@ class Callsigns(commands.Cog):
     @commands.command(name="update_callsigns")
     async def update_callsigns(self, ctx):
         # Check if user has the required role
-        required_role_id = 1410822274109542440
+        required_role_id = 1385160436046893168
         if not any(role.id == required_role_id for role in ctx.author.roles):
             embed = discord.Embed(
                 title="UNAUTHORIZED",
