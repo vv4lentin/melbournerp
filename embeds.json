@@ -1,210 +1,115 @@
 {
   "channels": {
-    "1409990592603357224": {
+    "1421088776993767456": {
       "embed": {
         "title": "Sessions",
         "description": "Here will be sent embeds everytime the in-game server status changes, for example, when a staff member SSUs, it will be displayed here.",
-        "color": 11020918,
+        "color": 12134451,
         "author": {
-          "name": "Miami Beach Roleplay",
-          "icon_url": "https://images-ext-1.discordapp.net/external/bPAr_kO_c0XfJqdCgNapZQl0fYzK14INrdeCtBPHwBI/%3Fsize%3D512/https/cdn.discordapp.com/icons/1409637452125175850/778a19b6966c1a9ae0d1cef3655b7c97.png"
+          "name": "Melbourne Roleplay",
+          "icon_url": "https://cdn.discordapp.com/icons/1383386513533964349/202921f0cb5e1382522e41b5948f19c5.png?size=512"
         },
         "footer": {
-          "text": "Miami Beach Roleplay | Sessions Management System",
-          "icon_url": "https://images-ext-1.discordapp.net/external/bPAr_kO_c0XfJqdCgNapZQl0fYzK14INrdeCtBPHwBI/%3Fsize%3D512/https/cdn.discordapp.com/icons/1409637452125175850/778a19b6966c1a9ae0d1cef3655b7c97.png"
+          "text": "Melbourne Roleplay",
+          "icon_url": "https://cdn.discordapp.com/icons/1383386513533964349/202921f0cb5e1382522e41b5948f19c5.png?size=512"
         },
         "image": {
-          "url": "https://cdn.discordapp.com/attachments/1409991757025771681/1410924642343976980/NEW_YORK_2.png"
+          "url": "https://cdn.discordapp.com/attachments/1383386514385272864/1421439122316464219/NEW_YORK.png?ex=68d909d7&is=68d7b857&hm=223898c799d7739c9400543b11f5b28e267cab5a14564150ca12056350c0429c&"
         }
       },
       "view": null
     },
-    "1409990789332861091": {
+    "1421498900027543633": {
       "embed": {
         "title": "Market",
         "description": "**Coming Soon!**",
-        "color": 11020918,
+      	"color": 12134451,
         "author": {
-          "name": "Miami Beach Roleplay",
-          "icon_url": "https://images-ext-1.discordapp.net/external/bPAr_kO_c0XfJqdCgNapZQl0fYzK14INrdeCtBPHwBI/%3Fsize%3D512/https/cdn.discordapp.com/icons/1409637452125175850/778a19b6966c1a9ae0d1cef3655b7c97.png"
+          "name": "Melbourne Roleplay",
+          "icon_url": "https://cdn.discordapp.com/icons/1383386513533964349/202921f0cb5e1382522e41b5948f19c5.png?size=512"
         },
         "footer": {
-          "text": "Miami Beach Roleplay",
-          "icon_url": "https://images-ext-1.discordapp.net/external/bPAr_kO_c0XfJqdCgNapZQl0fYzK14INrdeCtBPHwBI/%3Fsize%3D512/https/cdn.discordapp.com/icons/1409637452125175850/778a19b6966c1a9ae0d1cef3655b7c97.png"
+          "text": "Melbourne Roleplay",
+          "icon_url": "https://cdn.discordapp.com/icons/1383386513533964349/202921f0cb5e1382522e41b5948f19c5.png?size=512"
         },
         "image": {
-          "url": "https://cdn.discordapp.com/attachments/1409991757025771681/1410924642343976980/NEW_YORK_2.png"
+          "url": "https://cdn.discordapp.com/attachments/1383386514385272864/1421439122316464219/NEW_YORK.png?ex=68d909d7&is=68d7b857&hm=223898c799d7739c9400543b11f5b28e267cab5a14564150ca12056350c0429c&"
         }
       },
       "view": null
     },
-    "1410663962969772112": {
-      "embed": {
-        "title": "Staff | Training Guide",
-        "description": "**[Training Guide](https://docs.google.com/document/d/10c0OUzj6vD0PAGGT2ARmu8TNMRxCiqmOwlVzkmbt9DI/edit?usp=drivesdk)**",
-        "color": 11020918,
-        "author": {
-          "name": "Miami Beach Roleplay",
-          "icon_url": "https://images-ext-1.discordapp.net/external/bPAr_kO_c0XfJqdCgNapZQl0fYzK14INrdeCtBPHwBI/%3Fsize%3D512/https/cdn.discordapp.com/icons/1409637452125175850/778a19b6966c1a9ae0d1cef3655b7c97.png"
-        },
-        "footer": {
-          "text": "Miami Beach Roleplay",
-          "icon_url": "https://images-ext-1.discordapp.net/external/bPAr_kO_c0XfJqdCgNapZQl0fYzK14INrdeCtBPHwBI/%3Fsize%3D512/https/cdn.discordapp.com/icons/1409637452125175850/778a19b6966c1a9ae0d1cef3655b7c97.png"
-        },
-        "image": {
-          "url": "https://cdn.discordapp.com/attachments/1409991757025771681/1410924642343976980/NEW_YORK_2.png"
-        }
-      },
-      "view": null
-    },
-    "1410299902281650317": {
-      "embed": {
-        "title": "Staff | Restrictions",
-        "description": "### FounderShip\n\n:down\n:heal all\n:bring all\n**All/Others** \n\n### DirectorShip\n\n:admin / :unadmin\n:jail\n:time\n:weather\n:load all\n:helper / :unhelper\n\n### Management Team\n\n:mod / :unmod\n:startnearfire\n:m\n:prty\n\n### Administration Team\n\n:pt\n:ban / :unban\n:down\n\n### Moderation Team\n\n:tocar / :toatv\n:log\n:kl\n:h\n:tp\n:pm\n:refresh\n:bring\n:heal\n:startfire / :stopfire\n:view\n:unwanted / :wanted\n:mods\n:load\n:to\n:bans\n:cmds\n:helpers\n:admins\n:logs\n:kick\n\n** Off Duty Commands **\n\n:X:\n\n-# SHRs are allowed to use all commands off duty.",
-        "color": 11020918,
-        "author": {
-          "name": "Miami Beach Roleplay",
-          "icon_url": "https://images-ext-1.discordapp.net/external/bPAr_kO_c0XfJqdCgNapZQl0fYzK14INrdeCtBPHwBI/%3Fsize%3D512/https/cdn.discordapp.com/icons/1409637452125175850/778a19b6966c1a9ae0d1cef3655b7c97.png"
-        },
-        "footer": {
-          "text": "Miami Beach Roleplay",
-          "icon_url": "https://images-ext-1.discordapp.net/external/bPAr_kO_c0XfJqdCgNapZQl0fYzK14INrdeCtBPHwBI/%3Fsize%3D512/https/cdn.discordapp.com/icons/1409637452125175850/778a19b6966c1a9ae0d1cef3655b7c97.png"
-        },
-        "image": {
-          "url": "https://cdn.discordapp.com/attachments/1409991757025771681/1410924642343976980/NEW_YORK_2.png"
-        }
-      },
-      "view": null
-    },
-    "1410300593591025754": {
-      "embed": {
-        "title": "Flagged Avatars",
-        "description": "**Here, will be displayed every avatars found unrealistic or innapropriate by ERM, please moderate them frequently, also, don't use the kick button.**",
-        "color": 11020918,
-        "author": {
-          "name": "Miami Beach Roleplay",
-          "icon_url": "https://images-ext-1.discordapp.net/external/bPAr_kO_c0XfJqdCgNapZQl0fYzK14INrdeCtBPHwBI/%3Fsize%3D512/https/cdn.discordapp.com/icons/1409637452125175850/778a19b6966c1a9ae0d1cef3655b7c97.png"
-        },
-        "footer": {
-          "text": "Miami Beach Roleplay",
-          "icon_url": "https://images-ext-1.discordapp.net/external/bPAr_kO_c0XfJqdCgNapZQl0fYzK14INrdeCtBPHwBI/%3Fsize%3D512/https/cdn.discordapp.com/icons/1409637452125175850/778a19b6966c1a9ae0d1cef3655b7c97.png"
-        },
-        "image": {
-          "url": "https://cdn.discordapp.com/attachments/1409991757025771681/1410924642343976980/NEW_YORK_2.png"
-        }
-      },
-      "view": null
-    },
-    "1410300631926964365": {
+    "1421801258188279881": {
       "embed": {
         "title": "Flagged Liveries",
         "description": "**Here, will be displayed every vehicles using banned liveries (Undercover, Ghost, SWAT, WL), please moderate them frequently.**",
-        "color": 11020918,
+	      "color": 12134451,
         "author": {
-          "name": "Miami Beach Roleplay",
-          "icon_url": "https://images-ext-1.discordapp.net/external/bPAr_kO_c0XfJqdCgNapZQl0fYzK14INrdeCtBPHwBI/%3Fsize%3D512/https/cdn.discordapp.com/icons/1409637452125175850/778a19b6966c1a9ae0d1cef3655b7c97.png"
+          "name": "Melbourne Roleplay",
+          "icon_url": "https://cdn.discordapp.com/icons/1383386513533964349/202921f0cb5e1382522e41b5948f19c5.png?size=512"
         },
         "footer": {
-          "text": "Miami Beach Roleplay",
-          "icon_url": "https://images-ext-1.discordapp.net/external/bPAr_kO_c0XfJqdCgNapZQl0fYzK14INrdeCtBPHwBI/%3Fsize%3D512/https/cdn.discordapp.com/icons/1409637452125175850/778a19b6966c1a9ae0d1cef3655b7c97.png"
+          "text": "Melbourne Roleplay",
+          "icon_url": "https://cdn.discordapp.com/icons/1383386513533964349/202921f0cb5e1382522e41b5948f19c5.png?size=512"
         },
         "image": {
-          "url": "https://cdn.discordapp.com/attachments/1409991757025771681/1410924642343976980/NEW_YORK_2.png"
+          "url": "https://cdn.discordapp.com/attachments/1383386514385272864/1421439122316464219/NEW_YORK.png?ex=68d909d7&is=68d7b857&hm=223898c799d7739c9400543b11f5b28e267cab5a14564150ca12056350c0429c&"
         }
       },
       "view": null
     },
-    "1410303079005556837": {
-      "embed": {
-        "title": "Internals Affairs | Chain of Commands",
-        "description": "### Internals Affairs Director\n**Internals Affairs Supervisor**\nSenior Internals Affairs\nJunior Internals Affairs\nTrial Internals Affairs",
-        "color": 11020918,
-        "author": {
-          "name": "Miami Beach Roleplay",
-          "icon_url": "https://images-ext-1.discordapp.net/external/bPAr_kO_c0XfJqdCgNapZQl0fYzK14INrdeCtBPHwBI/%3Fsize%3D512/https/cdn.discordapp.com/icons/1409637452125175850/778a19b6966c1a9ae0d1cef3655b7c97.png"
-        },
-        "footer": {
-          "text": "Miami Beach Roleplay",
-          "icon_url": "https://images-ext-1.discordapp.net/external/bPAr_kO_c0XfJqdCgNapZQl0fYzK14INrdeCtBPHwBI/%3Fsize%3D512/https/cdn.discordapp.com/icons/1409637452125175850/778a19b6966c1a9ae0d1cef3655b7c97.png"
-        },
-        "image": {
-          "url": "https://cdn.discordapp.com/attachments/1409991757025771681/1410924642343976980/NEW_YORK_2.png"
-        }
-      },
-      "view": null
-    },
-    "1412116463405498438": {
-      "embed": {
-        "title": "Discord Moderation | Chain of Commands",
-        "description": "### Head Discord Moderator\n**Senior Discord Moderator**\nDiscord Moderator\nJunior Discord Moderator\nTrial Discord Moderator",
-        "color": 11020918,
-        "author": {
-          "name": "Miami Beach Roleplay",
-          "icon_url": "https://images-ext-1.discordapp.net/external/bPAr_kO_c0XfJqdCgNapZQl0fYzK14INrdeCtBPHwBI/%3Fsize%3D512/https/cdn.discordapp.com/icons/1409637452125175850/778a19b6966c1a9ae0d1cef3655b7c97.png"
-        },
-        "footer": {
-          "text": "Miami Beach Roleplay",
-          "icon_url": "https://images-ext-1.discordapp.net/external/bPAr_kO_c0XfJqdCgNapZQl0fYzK14INrdeCtBPHwBI/%3Fsize%3D512/https/cdn.discordapp.com/icons/1409637452125175850/778a19b6966c1a9ae0d1cef3655b7c97.png"
-        },
-        "image": {
-          "url": "https://cdn.discordapp.com/attachments/1409991757025771681/1410924642343976980/NEW_YORK_2.png"
-        }
-      },
-      "view": null
-    },
-    "1410230678355709984": {
+    "1421443989139361802": {
       "embed": {
         "title": "Staff Requests",
         "description": "If you need assistance to moderate the server, use the 'requesthelp [reason]' command, it will automatically send the request here, also, reason is REQUIRED. Please read Staff Rules to see the regulations.",
-        "color": 11020918,
+	      "color": 12134451,
         "author": {
-          "name": "Miami Beach Roleplay",
-          "icon_url": "https://images-ext-1.discordapp.net/external/bPAr_kO_c0XfJqdCgNapZQl0fYzK14INrdeCtBPHwBI/%3Fsize%3D512/https/cdn.discordapp.com/icons/1409637452125175850/778a19b6966c1a9ae0d1cef3655b7c97.png"
+          "name": "Melbourne Roleplay",
+          "icon_url": "https://cdn.discordapp.com/icons/1383386513533964349/202921f0cb5e1382522e41b5948f19c5.png?size=512"
         },
         "footer": {
-          "text": "Miami Beach Roleplay",
-          "icon_url": "https://images-ext-1.discordapp.net/external/bPAr_kO_c0XfJqdCgNapZQl0fYzK14INrdeCtBPHwBI/%3Fsize%3D512/https/cdn.discordapp.com/icons/1409637452125175850/778a19b6966c1a9ae0d1cef3655b7c97.png"
+          "text": "Melbourne Roleplay",
+          "icon_url": "https://cdn.discordapp.com/icons/1383386513533964349/202921f0cb5e1382522e41b5948f19c5.png?size=512"
         },
         "image": {
-          "url": "https://cdn.discordapp.com/attachments/1409991757025771681/1410924642343976980/NEW_YORK_2.png"
+          "url": "https://cdn.discordapp.com/attachments/1383386514385272864/1421439122316464219/NEW_YORK.png?ex=68d909d7&is=68d7b857&hm=223898c799d7739c9400543b11f5b28e267cab5a14564150ca12056350c0429c&"
         }
       },
       "view": null
     },
-    "1410300788445544539": {
+    "1421748024438161438": {
       "embed": {
-        "title": "Staff | Chain of Command",
-        "description": "### - FounderShip\nFounder\nDeputy Founder\n### - DirectorShip\nDirector\nAssistant Director\nDeputy Director\n### - Management Team\nCommunity Manager\nSenior Management\nJunior Management\n### - Administration Team\nHead of Administration\nSenior Administrator\nAdministrator\nJunior Administrator\nTrial Administrator\n### - Moderation Team\nHead of Moderation\nSenior Moderator\nModerator\nJunior Moderator\nTrial Moderator",
-        "color": 11020918,
+        "title": "Staff | Hierarchy",
+        "description":  "Coming soon",
+    	  "color": 12134451,
         "author": {
-          "name": "Miami Beach Roleplay",
-          "icon_url": "https://images-ext-1.discordapp.net/external/bPAr_kO_c0XfJqdCgNapZQl0fYzK14INrdeCtBPHwBI/%3Fsize%3D512/https/cdn.discordapp.com/icons/1409637452125175850/778a19b6966c1a9ae0d1cef3655b7c97.png"
+          "name": "Melbourne Roleplay",
+          "icon_url": "https://cdn.discordapp.com/icons/1383386513533964349/202921f0cb5e1382522e41b5948f19c5.png?size=512"
         },
         "footer": {
-          "text": "Miami Beach Roleplay",
-          "icon_url": "https://images-ext-1.discordapp.net/external/bPAr_kO_c0XfJqdCgNapZQl0fYzK14INrdeCtBPHwBI/%3Fsize%3D512/https/cdn.discordapp.com/icons/1409637452125175850/778a19b6966c1a9ae0d1cef3655b7c97.png"
+          "text": "Melbourne Roleplay",
+          "icon_url": "https://cdn.discordapp.com/icons/1383386513533964349/202921f0cb5e1382522e41b5948f19c5.png?size=512"
         },
         "image": {
-          "url": "https://cdn.discordapp.com/attachments/1409991757025771681/1410924642343976980/NEW_YORK_2.png"
+          "url": "https://cdn.discordapp.com/attachments/1383386514385272864/1421439122316464219/NEW_YORK.png?ex=68d909d7&is=68d7b857&hm=223898c799d7739c9400543b11f5b28e267cab5a14564150ca12056350c0429c&"
         }
       },
       "view": null
     },
-    "1410299840893554779": {
+    "1421818082837663845": {
       "embed": {
         "title": "Staff | Rules ",
-        "description": "Here are all the staff rules of ***Miami Beach Roleplay** :\n### - Duty\n You may **ONLY** start your duty if there are 9+ **REAL** players in-game, also, you **use**, your assigned callsign.\n### - Off-Duty and Banned Commands\n You may **NOT** use any commands while being off-duty, even if calls are stacking when there are less than 9 real players, also, you may **NOT** use any restricted commands.\n### - Chain of Command\n You **MUST** respect the chain of command and respect the orders of you higher-ups except if they try to make you break rule or if the orders are abusive.\n### - SPaG (Spelling, Punctuation and Grammar)\n When on-duty, youu **MUST** always use SPaG whether you're patrolling, answering calls or talking with friends/others staff members.\n### - Patrol\n When on-duty, you may **NOT** wait for a call with your car parked, by that, I mean that you must patrol around the map.\n### - Respect\n You **MUST** always be disrespectful towards everyone in discord and in-game whether you're off or on-duty.\n### - Internals Affairs Investigations\n You may **NOT** interfere with any IA Investigations.\n### - 4 letters commands\n When you use a command, you **MUST** use 4 letters commands (usernames), for example, execute :to vava and not :to vav.\n### - Help Requests\n When there is an active help request, you **MUST** abandon roleplay and get on-duty, also, you may **ONLY** make an help requests if you are the only staff in-game, on-duty or if calls are stacking. ",
-        "color": 11020918,
+        "description": "Here are all the staff rules of ***Melbourne Roleplay** :\n### - Duty\n You may **ONLY** start your duty if there are 9+ **REAL** players in-game, also, you **use**, your assigned callsign.\n### - Off-Duty and Banned Commands\n You may **NOT** use any commands while being off-duty, even if calls are stacking when there are less than 9 real players, also, you may **NOT** use any restricted commands.\n### - Chain of Command\n You **MUST** respect the chain of command and respect the orders of you higher-ups except if they try to make you break rule or if the orders are abusive.\n### - SPaG (Spelling, Punctuation and Grammar)\n When on-duty, youu **MUST** always use SPaG whether you're patrolling, answering calls or talking with friends/others staff members.\n### - Patrol\n When on-duty, you may **NOT** wait for a call with your car parked, by that, I mean that you must patrol around the map.\n### - Respect\n You **MUST** always be disrespectful towards everyone in discord and in-game whether you're off or on-duty.\n### - Internals Affairs Investigations\n You may **NOT** interfere with any IA Investigations.\n### - 4 letters commands\n When you use a command, you **MUST** use 4 letters commands (usernames), for example, execute :to vava and not :to vav.\n### - Help Requests\n When there is an active help request, you **MUST** abandon roleplay and get on-duty, also, you may **ONLY** make an help requests if you are the only staff in-game, on-duty or if calls are stacking. ",
+      	"color": 12134451,
         "author": {
-          "name": "Miami Beach Roleplay",
-          "icon_url": "https://images-ext-1.discordapp.net/external/bPAr_kO_c0XfJqdCgNapZQl0fYzK14INrdeCtBPHwBI/%3Fsize%3D512/https/cdn.discordapp.com/icons/1409637452125175850/778a19b6966c1a9ae0d1cef3655b7c97.png"
+          "name": "Melbourne Roleplay",
+          "icon_url": "https://cdn.discordapp.com/icons/1383386513533964349/202921f0cb5e1382522e41b5948f19c5.png?size=512"
         },
         "footer": {
-          "text": "Miami Beach Roleplay",
-          "icon_url": "https://images-ext-1.discordapp.net/external/bPAr_kO_c0XfJqdCgNapZQl0fYzK14INrdeCtBPHwBI/%3Fsize%3D512/https/cdn.discordapp.com/icons/1409637452125175850/778a19b6966c1a9ae0d1cef3655b7c97.png"
+          "text": "Melbourne Roleplay",
+          "icon_url": "https://cdn.discordapp.com/icons/1383386513533964349/202921f0cb5e1382522e41b5948f19c5.png?size=512"
         },
         "image": {
-          "url": "https://cdn.discordapp.com/attachments/1409991757025771681/1410924642343976980/NEW_YORK_2.png"
+          "url": "https://cdn.discordapp.com/attachments/1383386514385272864/1421439122316464219/NEW_YORK.png?ex=68d909d7&is=68d7b857&hm=223898c799d7739c9400543b11f5b28e267cab5a14564150ca12056350c0429c&"
         }
       },
       "view": null
@@ -212,18 +117,18 @@
     "1410017988798713897": {
       "embed": {
         "title": "Discord Rules",
-        "description": "### •  Rule 1: Respect - Engage in fun conversations, treat everyone with consideration, value their worth, and uphold established guidelines.\n### •  Rule 2: Applications - When submitting an application, you are not to talk about, hint, or request for it to be read or accepted. Doing so will result in a denial.\n### •  Rule 3: Pinging - Do not Mass Ping anyone, especially staff. Senior High-rank have a Ping Permission role to halt the constant pings.\n### •  Rule 4: Channel Use - Every channel has a meaning; all talkable channels also have a meaning. Public-Chat is not a command executor section. You must go to the Bot Commands. Misuse of certain channels may result in Community Warnings or Punishments.\n### •  Rule 5: Doxxing - Doxxing, the act of publishing someone’s private information online without their consent, invading their privacy or putting them in danger (which may involve real-life purposes, like leaking age, face, address, full name, Driver’s licence, etc.), is prohibited.\n### •  Rule 6: Metagaming - Using a Website, such as Discord, as a way to figure out someone’s in-game movements or plans is Metagaming. Using outside knowledge for Roleplay Purpose is also prohibited.\n### •  Rule 7: Confidential - All locked channels are because their purpose is only for certain people to see them. Everything said in that channel is to be only discussed within that channel or the people access to it.\n### •  Rule 8: Begging for Roles - You are not to beg for Roles. Staff roles are rightfully earned. Not to be free-ranked given out. Only department roles, Social Media Roles, and Ping Roles are obtainable.\n### •  Rule 9: Language - Keep swearing to a minimum and don’t directly focus it to somebody. Racial Slurs or anything beyond too far is deemed prohibited.\n### •  Rule 10: Speaking Language - This is an English Only Server. Meaning so, you must only abide by speaking English. Other language is strictly Prohibited as staff may have issues communicating.",
-        "color": 11020918,
+        "description": "Rule 1 : No Abusive Language in our community chats, if our we find any sort of Abusive Language/Behaviour you will receive a warning and a time out.\n\nRule 2 : No form of NSFW content will be allowed in our community, the consequence of you posting NSFW material will be a ban from Melbourne Roleplay.\n\nRule 3 : No form of Advertising your own ERLC private server whether that be in DM’s or public chat. The consequences for this will be a ban unless Foundership disapproves the ban.\n\nRule 4 : No excessive spamming in chats, if you delete the spamming we will look at the logs and you will receive your first warning and you will be on time out.\n\nRule 5 : No excessive pinging of an SHR member, you may ping an SHR member ONCE but only if it is deemed important. The consequence of breaking this rule will be a warning and a time out will be received.\n\nRule 6 : No form of disrespect is tolerated whether that be discrimination, disrespecting our staff members, or disrespecting our community members. The consequence of breaking this rule will be a warning and a time out will be handed out.\n\nRule 7 : No Harassing any of our members, these people include staff members and our community members/partners. This harassment can be found in DM’s or in public chats and if you see any harassment going on instantly open a ticket. The consequence of breaking this rule will be a kick.\n\nRule 8 : No leaking Personal Information of other people in our community or also formally known as Doxxing. Doxxing will not be permitted in our server and the consequence for doing this action will be an instant ban from our server and a report to discord.\n\nRule 9 : No lying on your staff application, if we find out you have lied or used AI on your application the consequence will be a warning and a Staff Blacklist may be handed out depending on the severity of the situation.\n\nRule 10 : No excessive use of Brainrot terms, this could be the saying of Italian Brainrot or the word “67” the consequences for this will be a warning and a time out will likely be received.\n\nRule 11 : Have fun here at the Melbourne Roleplay community! We have kind hearted staff who always welcome new comers. 🙂\n\nMade by: 1littlemoose",
+      	"color": 12134451,
         "author": {
-          "name": "Miami Beach Roleplay",
-          "icon_url": "https://images-ext-1.discordapp.net/external/bPAr_kO_c0XfJqdCgNapZQl0fYzK14INrdeCtBPHwBI/%3Fsize%3D512/https/cdn.discordapp.com/icons/1409637452125175850/778a19b6966c1a9ae0d1cef3655b7c97.png"
+          "name": "Melbourne Roleplay",
+          "icon_url": "https://cdn.discordapp.com/icons/1383386513533964349/202921f0cb5e1382522e41b5948f19c5.png?size=512"
         },
         "footer": {
-          "text": "Miami Beach Roleplay",
-          "icon_url": "https://images-ext-1.discordapp.net/external/bPAr_kO_c0XfJqdCgNapZQl0fYzK14INrdeCtBPHwBI/%3Fsize%3D512/https/cdn.discordapp.com/icons/1409637452125175850/778a19b6966c1a9ae0d1cef3655b7c97.png"
+          "text": "Melbourne Roleplay",
+          "icon_url": "https://cdn.discordapp.com/icons/1383386513533964349/202921f0cb5e1382522e41b5948f19c5.png?size=512"
         },
         "image": {
-          "url": "https://cdn.discordapp.com/attachments/1409991757025771681/1410924642343976980/NEW_YORK_2.png"
+          "url": "https://cdn.discordapp.com/attachments/1383386514385272864/1421439122316464219/NEW_YORK.png?ex=68d909d7&is=68d7b857&hm=223898c799d7739c9400543b11f5b28e267cab5a14564150ca12056350c0429c&"
         }
       },
       "view": null
@@ -231,37 +136,18 @@
     "1409993540972445706": {
       "embed": {
         "title": "Partnership | Requirements",
-        "description": "- 5 Members\n- Active server\n- Frequent SSUs",
-        "color": 11020918,
+        "description": "**Atleast 5 members\n2 Staff Members\nNo NSFW content or Major Abusive Language\nMust follow PRC guidelines\nIf you request more than one representative from our server you must have two representatives from your server. **",
+      	"color": 12134451,
         "author": {
-          "name": "Miami Beach Roleplay",
-          "icon_url": "https://images-ext-1.discordapp.net/external/bPAr_kO_c0XfJqdCgNapZQl0fYzK14INrdeCtBPHwBI/%3Fsize%3D512/https/cdn.discordapp.com/icons/1409637452125175850/778a19b6966c1a9ae0d1cef3655b7c97.png"
+          "name": "Melbourne Roleplay",
+          "icon_url": "https://cdn.discordapp.com/icons/1383386513533964349/202921f0cb5e1382522e41b5948f19c5.png?size=512"
         },
         "footer": {
-          "text": "Miami Beach Roleplay",
-          "icon_url": "https://images-ext-1.discordapp.net/external/bPAr_kO_c0XfJqdCgNapZQl0fYzK14INrdeCtBPHwBI/%3Fsize%3D512/https/cdn.discordapp.com/icons/1409637452125175850/778a19b6966c1a9ae0d1cef3655b7c97.png"
+          "text": "Melbourne Roleplay",
+          "icon_url": "https://cdn.discordapp.com/icons/1383386513533964349/202921f0cb5e1382522e41b5948f19c5.png?size=512"
         },
         "image": {
-          "url": "https://cdn.discordapp.com/attachments/1409991757025771681/1410924642343976980/NEW_YORK_2.png"
-        }
-      },
-      "view": null
-    },
-    "1410302334000562326": {
-      "embed": {
-        "title": "Training Announcement",
-        "description": "The training system will be available soon, for now, please ping <@&1409647282168660038> to start a training session.",
-        "color": 11020918,
-        "author": {
-          "name": "Miami Beach Roleplay",
-          "icon_url": "https://images-ext-1.discordapp.net/external/bPAr_kO_c0XfJqdCgNapZQl0fYzK14INrdeCtBPHwBI/%3Fsize%3D512/https/cdn.discordapp.com/icons/1409637452125175850/778a19b6966c1a9ae0d1cef3655b7c97.png"
-        },
-        "footer": {
-          "text": "Miami Beach Roleplay | Training System",
-          "icon_url": "https://images-ext-1.discordapp.net/external/bPAr_kO_c0XfJqdCgNapZQl0fYzK14INrdeCtBPHwBI/%3Fsize%3D512/https/cdn.discordapp.com/icons/1409637452125175850/778a19b6966c1a9ae0d1cef3655b7c97.png"
-        },
-        "image": {
-          "url": "https://cdn.discordapp.com/attachments/1409991757025771681/1410924642343976980/NEW_YORK_2.png"
+          "url": "https://cdn.discordapp.com/attachments/1383386514385272864/1421439122316464219/NEW_YORK.png?ex=68d909d7&is=68d7b857&hm=223898c799d7739c9400543b11f5b28e267cab5a14564150ca12056350c0429c&"
         }
       },
       "view": null
