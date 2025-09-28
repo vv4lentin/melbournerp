@@ -7,7 +7,7 @@ class WelcomeGoodbye(commands.Cog):
         self.target_guild_id = 1383386513533964349  # Target guild ID
         self.welcome_channel_id = 1384448616827064351  # Welcome channel ID
         self.goodbye_channel_id = 1383431917923336252  # Goodbye channel ID
-        self.autorole_ids = [1384461995587276880, 1384462876319940608]  # Autorole IDs
+        self.autorole_ids = [1384461995587276880, 1384463296656314458]  # Autorole IDs
         self.image_url = "https://cdn.discordapp.com/attachments/1383386514385272864/1421439122316464219/NEW_YORK.png?ex=68da5b57&is=68d909d7&hm=7b874e6eabe6b910561e9c5acbf415f414546f109bd350bac887f7d72dc90c93&"
 
     @commands.Cog.listener()
