@@ -6,34 +6,44 @@ class Callsigns(commands.Cog):
         self.bot = bot
         # Role ID to prefix mapping (cleaned, with O → F, CO → CF, and updated A role ID)
         self.role_prefixes = {
-            1409647282168660038: "AT",
-            1409646969646874757: "TM",
-            1409646965637251192: "JM",
-            1409646961551740939: "M",
-            1409646958351487029: "SM",
-            1409646950155944058: "HM",
-            1409646326152429568: "TA",
-            1409646322742595625: "JA",
-            1409646319232090223: "A",
-            1409646316044156958: "SA",
-            1409646285442646056: "HA",
-            1409644038784811090: "JMT",
-            1409643902734041211: "SMT",
-            1409643792176517221: "CM",
-            1409641396964556862: "DD",
-            1409641367721742416: "AD",
-            1409641315993649342: "D",
-            1409639458684538978: "DF",
-            1409639307068837978: "F"
+            1402933851436879932: "TM",
+            1384460078928625755: "JM",
+            1384459593366769776: "M",
+            1384459510571335681: "SM",
+            1384459413401899028: "HM",
+            1420729658114052177: "HoM",
+            1384438610303914015: "JA",
+            1384437924652781690: "A",
+            1384438407421497548: "SA",
+            1384438224021094482: "HA",
+            1420729110031765618: "HoA",
+            1384437544825131171: "TSS",
+            1384437559068987505: "JSS",
+            1384437426503684127: "SS",
+            1420635304607485972: "SSS",
+            1384437286841876530: "HSS",
+            1383402914340671558: "TMT",
+            1420415728137277440: "TJMT",
+            1383402824783626281: "JMT",
+            1383402737340776468: "MGT",
+            1383402634462892032: "SMT",
+            1383402460777021500: "CM",
+            1383401961621159957: "TAD",
+            1383401856620957696: "AD",
+            1383401686827143201: "DD",
+            1383401586285346938: "D",
+            1383401266998153216: "AF",
+            1383386801682649088: "CF",
+            1383401122063978496: "F"
         }
         # Role groups in specified order
         self.role_groups = [
-            ("FounderShip", ["DF", "F"]),
-            ("DirectorShip", ["DD", "AD", "D"]),
-            ("Management Team", ["JMT", "SMT", "CM"]),
-            ("Administration Team", ["TA", "JA", "A", "SA", "HA"]),
-            ("Moderation Team", ["TM", "JM", "M", "SM", "HM"]),
-            ("Awaiting Training", ["AT"])
+            ("FounderShip", ["AF", "CF", "F"]),
+            ("DirectorShip", ["TAD", "AD", "DD", "D"]),
+            ("Management Team", ["TMT", "TJMT", "JMT", "MGT", "SMT", "CM"]),
+            ("Staff Supervision Team", ["TSS", "JSS", "SS", "SSS", "HSS"]),
+            ("Administration Team", ["JA", "A", "SA", "HA", "HoA"]),
+            ("Moderation Team", ["TM", "JM", "M", "SM", "HM", "HoM"])
         ]
 
     # Helper function to generate callsign based on role
@@ -61,7 +71,7 @@ class Callsigns(commands.Cog):
             return
 
         # Get the target channel
-        target_channel = guild.get_channel(1410300455858475089)
+        target_channel = guild.get_channel(1421432657891557426)
         if not target_channel:
             await ctx.send("Target channel not found.")
             return
@@ -96,8 +106,8 @@ class Callsigns(commands.Cog):
             callsigns[member] = callsign
 
         # Ping the role
-        ping_role = guild.get_role(1409647524607955149)
-        ping_message = f"<@&{1409647524607955149}> The callsigns has been updated! Your callsign might have changed." if ping_role else "On-Duty Role not found"
+        ping_role = guild.get_role(1384465784042029198)
+        ping_message = f"<@&{1384465784042029198}> The callsigns has been updated! Your callsign might have changed." if ping_role else "On-Duty Role not found"
         await target_channel.send(ping_message)
 
         # Create an embed for each role group in specified order
@@ -133,3 +143,4 @@ class Callsigns(commands.Cog):
 
 async def setup(bot):
     await bot.add_cog(Callsigns(bot))
+
