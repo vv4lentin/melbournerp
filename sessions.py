@@ -74,27 +74,27 @@ class Sessions(commands.Cog):
             return
 
         embed = discord.Embed(
-            color=14384577,
+            color=12134451,
             title="Server Start Up (SSU) | Community Vote",
             description="Vote for SSU with the button below, 5 votes are required to SSU."
         )
         embed.set_author(
-            name="Miami Beach Roleplay",
-            icon_url="https://cdn.discordapp.com/icons/1409637452125175850/778a19b6966c1a9ae0d1cef3655b7c97.png?size=512"
+            name="Melbourne Roleplay",
+            icon_url="https://cdn.discordapp.com/icons/1383386513533964349/202921f0cb5e1382522e41b5948f19c5.png?size=512"
         )
-        embed.set_image(url="https://cdn.discordapp.com/attachments/1409991757025771681/1410924642343976980/NEW_YORK_2.png?ex=68b2c978&is=68b177f8&hm=667deaf834ed429f60d7a1a4454088e474e9ab83bb0c299d7549456adadc36ee&")
+        embed.set_image(url="https://cdn.discordapp.com/attachments/1383386514385272864/1421439122316464219/NEW_YORK.png?ex=68d909d7&is=68d7b857&hm=223898c799d7739c9400543b11f5b28e267cab5a14564150ca12056350c0429c&")
         embed.set_footer(
-            text="Miami Beach Roleplay | Sessions Management System",
-            icon_url="https://cdn.discordapp.com/icons/1409637452125175850/778a19b6966c1a9ae0d1cef3655b7c97.png?size=512"
+            text="Melbourne Roleplay | Sessions System",
+            icon_url="https://cdn.discordapp.com/icons/1383386513533964349/202921f0cb5e1382522e41b5948f19c5.png?size=512"
         )
         embed.add_field(
             name="Join Code",
-            value=f"SFRole\n**Votes: {len(self.voters)}/10**",
+            value=f"MeL\n**Votes: {len(self.voters)}/5**",
             inline=False
         )
         embed.add_field(
             name="Server Owner",
-            value="fartsaremelly2002",
+            value="1littlemoose",
             inline=False
         )
 
@@ -114,27 +114,27 @@ class Sessions(commands.Cog):
             return
 
         embed = discord.Embed(
-            color=14384577,
+            color=12134451,
             title="Server Start Up (SSU)",
             description="The in-game server has started up! Everyone who voted for SSU are required to join. Please follow all our rules during this session, if you require assistance, call !mod."
         )
         embed.set_author(
-            name="Miami Beach Roleplay",
-            icon_url="https://cdn.discordapp.com/icons/1409637452125175850/778a19b6966c1a9ae0d1cef3655b7c97.png?size=512"
+            name="Melbourne Roleplay",
+            icon_url="https://cdn.discordapp.com/icons/1383386513533964349/202921f0cb5e1382522e41b5948f19c5.png?size=512"
         )
-        embed.set_image(url="https://cdn.discordapp.com/attachments/1409991757025771681/1410924642343976980/NEW_YORK_2.png?ex=68b2c978&is=68b177f8&hm=667deaf834ed429f60d7a1a4454088e474e9ab83bb0c299d7549456adadc36ee&")
+        embed.set_image(url="https://cdn.discordapp.com/attachments/1383386514385272864/1421439122316464219/NEW_YORK.png?ex=68d909d7&is=68d7b857&hm=223898c799d7739c9400543b11f5b28e267cab5a14564150ca12056350c0429c&")
         embed.set_footer(
-            text="Miami Beach Roleplay | Sessions Management System",
-            icon_url="https://cdn.discordapp.com/icons/1409637452125175850/778a19b6966c1a9ae0d1cef3655b7c97.png?size=512"
+            text="Melbourne Roleplay | Sessions System",
+            icon_url="https://cdn.discordapp.com/icons/1383386513533964349/202921f0cb5e1382522e41b5948f19c5.png?size=512"
         )
         embed.add_field(
             name="Join Code",
-            value="SFRole",
+            value="MeL",
             inline=False
         )
         embed.add_field(
             name="Server Owner",
-            value="fartsaremelly2002",
+            value="1littlemoose",
             inline=False
         )
 
@@ -152,27 +152,27 @@ class Sessions(commands.Cog):
             return
 
         embed = discord.Embed(
-            color=14384577,
+            color=12134451,
             title="Server Shutdown (SSD)",
             description="The in-game server has shut down. Please leave the server. The MB:RP Staff Team hope to see y'all soon in the next session!"
         )
         embed.set_author(
-            name="Miami Beach Roleplay",
-            icon_url="https://cdn.discordapp.com/icons/1409637452125175850/778a19b6966c1a9ae0d1cef3655b7c97.png?size=512"
+            name="Melbourne Roleplay",
+            icon_url="https://cdn.discordapp.com/icons/1383386513533964349/202921f0cb5e1382522e41b5948f19c5.png?size=512"
         )
-        embed.set_image(url="https://cdn.discordapp.com/attachments/1409991757025771681/1410924642343976980/NEW_YORK_2.png?ex=68b2c978&is=68b177f8&hm=667deaf834ed429f60d7a1a4454088e474e9ab83bb0c299d7549456adadc36ee&")
+        embed.set_image(url="https://cdn.discordapp.com/attachments/1383386514385272864/1421439122316464219/NEW_YORK.png?ex=68d909d7&is=68d7b857&hm=223898c799d7739c9400543b11f5b28e267cab5a14564150ca12056350c0429c&")
         embed.set_footer(
-            text="Miami Beach Roleplay | Sessions Management System",
-            icon_url="https://cdn.discordapp.com/icons/1409637452125175850/778a19b6966c1a9ae0d1cef3655b7c97.png?size=512"
+            text="Melbourne Roleplay | Sessions System",
+            icon_url="https://cdn.discordapp.com/icons/1383386513533964349/202921f0cb5e1382522e41b5948f19c5.png?size=512"
         )
         embed.add_field(
             name="Join Code",
-            value="SFRole",
+            value="MeL",
             inline=False
         )
         embed.add_field(
             name="Server Owner",
-            value="fartsaremelly2002",
+            value="1littlemoose",
             inline=False
         )
 
