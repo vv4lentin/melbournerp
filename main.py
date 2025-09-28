@@ -1081,7 +1081,7 @@ async def training(ctx: commands.Context, co_host: discord.Member = None):
     # Create announcement embed
     embed = discord.Embed(
         title="Training • Announcement",
-        color=discord.Color.from_str("#FF69B4")  # Pink color
+        color=discord.Color.from_str("#B92833")  # Pink color
     )
     embed.add_field(name="Host", value=ctx.author.mention, inline=True)
     embed.add_field(name="Co-Host", value=co_host.mention if co_host else "None", inline=True)
@@ -1186,8 +1186,8 @@ async def role_request(interaction: discord.Interaction, role: str, action: str,
     channel_embed.add_field(name="Reason", value=reason, inline=False)
     channel_embed.add_field(name="Type", value=action, inline=False)
     channel_embed.set_author(
-        name="Miami Beach Roleplay",
-        icon_url="https://images-ext-1.discordapp.net/external/bPAr_kO_c0XfJqdCgNapZQl0fYzK14INrdeCtBPHwBI/%3Fsize%3D512/https/cdn.discordapp.com/icons/1409637452125175850/778a19b6966c1a9ae0d1cef3655b7c97.png"
+        name="Melbourne Roleplay",
+        icon_url="https://cdn.discordapp.com/icons/1383386513533964349/202921f0cb5e1382522e41b5948f19c5.png?size=512"
     )
     channel_embed.set_footer(
         name="Melbourne Roleplay",
@@ -1215,7 +1215,7 @@ async def on_ready():
     channel = bot.get_channel(APPLICATION_PANEL_CHANNEL_ID)
     if channel:
         embed = discord.Embed(
-            color=11020918,
+            color=12134451,
             title="Applications",
             description=(
                 "**Informations** \n\n"
@@ -1249,7 +1249,7 @@ async def on_ready():
     if ticket_channel:
         await ticket_channel.purge(limit=100)
         embed = discord.Embed(
-            color=11020918,
+            color=12134451,
             title="Support",
             description=(
                 "**Informations** \n\n"
@@ -1402,7 +1402,7 @@ async def closerequest(ctx, *, reason="No reason provided"):
         return
         
     embed = discord.Embed(
-        color=11020918,
+        color=12134451,
         title="Ticket | Close Request",
         description=f"{ctx.author.mention} requested to close this ticket.\n\n**Reason**: {reason}"
     )
