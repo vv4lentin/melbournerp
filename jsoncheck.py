@@ -14,10 +14,6 @@ class JsonCheck(commands.Cog):
 
     @commands.command(name='jsoncheck')
     async def json_check(self, ctx, filename: str = None):
-        """
-        Checks a JSON file for errors and validates its format.
-        Usage: .jsoncheck filename.json (server file) or .jsoncheck (with JSON attachment)
-        """
         # Step 1: Retrieve JSON content
         json_content, source_name, source_type = await self._get_json_content(ctx, filename)
         if json_content is None:
