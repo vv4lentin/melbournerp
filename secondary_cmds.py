@@ -50,19 +50,20 @@ class SecondaryCmds(commands.Cog):
             await ctx.send(f"Error fetching user: {str(e)}")
             return
 
-        # Create a fake context with the target user
+        # Create a fake message with the target user as the author
         fake_message = await ctx.channel.send(f"{command}")
+        fake_message.author = target_user  # Set the author to the target user
         fake_ctx = await self.bot.get_context(fake_message)
-        fake_ctx.author = target_user
-        fake_ctx.message.author = target_user
 
         try:
+            # Invoke the command with the fake context, respecting the target user's permissions
             await self.bot.invoke(fake_ctx)
-            await ctx.send(f"Executed command '{command}' as {target_user.display_name}.")
+            if not fake_ctx.command_failed:  # Check if the command executed successfully
+                await ctx.send(f"Executed command '{command}' as {target_user.display_name}.")
         except Exception as e:
             await ctx.send(f"Failed to execute command: {str(e)}")
         finally:
-            await fake_message.delete()
+            await fake_message.delete()  # Clean up the fake message
 
     @cexecute.error
     async def cexecute_error(self, ctx, error):
@@ -74,7 +75,7 @@ class SecondaryCmds(commands.Cog):
             )
             await ctx.send(embed=embed)
         elif isinstance(error, commands.MissingRequiredArgument):
-            await ctx.send("Please provide a user ID and command (e.g., `.cexecute 123456789012345678 help`).")
+            await ctx.send("Please provide a user ID and command (e.g., `.cexecute 123456789012345678 cpurge 10`).")
         elif isinstance(error, commands.BadArgument):
             await ctx.send("Please provide a valid user ID.")
 
