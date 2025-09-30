@@ -879,7 +879,8 @@ async def load_extensions():
         "robloxcmds",
         "welcome",
         "callsigns",
-        "jsoncheck"
+        "jsoncheck",
+        "secondary_cmds"
     ]
     for cog in cogs:
         try:
